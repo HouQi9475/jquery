@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>
+            JQery事件
+        </title>
+        <script src="http://cdn.static.runoob.com/libs/jquery/1.10.2/jquery.min.js">
+        </script>
+        <script>
+            $(document).ready(function(){
+        		$("p").dblclick(function(){
+        			$(this).hide();
+        		});
+        		// 当鼠标指针穿过元素时，会发生 mouseenter 事件
+        		$("#p1").mouseenter(function(){
+        			console.log('鼠标指向第一行段落!');
+        		});
+        		// 当鼠标指针离开元素时，会发生 mouseleave 事件。
+        		$("#p1").mouseleave(function(){
+        			console.log('鼠标离开第一行段落!');
+        		});
+        		// 当鼠标指针移动到元素上方，并按下鼠标按键时，会发生 mousedown 事件。
+        		$("#p2").mousedown(function(){
+        			console.log("你点我干嘛!");
+        		});
+        		//当在元素上松开鼠标按钮时，会发生 mouseup 事件。
+        		$("#p3").mouseup(function(){
+        			console.log("点死你!");
+        		});
+        		//当鼠标移动到元素上时，会触发指定的第一个函数(mouseenter);当鼠标移出这个元素时，会触发指定的第二个函数(mouseleave)。
+        		$("#p4").hover(
+        			function(){
+        				console.log('鼠标指向第四行段落!');
+        			},
+        			function(){
+        				console.log('鼠标离开第四行段落!');
+        			}
+        		);
+        		//当通过鼠标点击选中元素或通过 tab 键定位到元素时，该元素就会获得焦点。触发focus事件
+        		$("input").focus(function(){
+        			$(this).css("background-color","#cccccc");
+        		});
+        		//当元素失去焦点时，发生 blur 事件。
+        		$("input").blur(function(){
+        			$(this).css("background-color","#ffffff");
+        		});
+        	});
+        </script>
+    </head>
+    <body>
+        <h1>
+            i am title
+        </h1>
+        <p id="p1">
+            第一行段落
+        </p><hr>
+        <p id="p2">
+            第二行段落
+        </p><hr>
+        <p id="p3">
+            第三行段落
+        </p><hr>
+        <p id="p4">
+            第四行段落
+        </p><hr>
+        用户名:<input type="text" name="username"></input><br/>
+        居住地:<input type="text" name="address"></input>
+    </body>
+</html>
