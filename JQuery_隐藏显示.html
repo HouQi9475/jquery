@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>
+            JQuery隐藏和显示
+        </title>
+        <script src="js/jquery-1.2.6.min.js" type="text/javascript">
+        </script>
+        <script>
+            $(document).ready(function(){
+            	$("#btn1").click(function(){
+            		$("p").hide(1000);   // 可选参数  1000ms
+            	});
+            	$("#btn2").click(function(){
+            		$("p").show();
+            	});
+            	//通过 jQuery，您可以使用 toggle() 方法来切换 hide() 和 show() 方法。
+            	$("#btn3").click(function(){
+            		$("p").toggle(2000,function(){alert('886')});
+            	})
+        	});
+        </script>
+    </head>
+    <body>
+        <h3>
+            隐藏/显示
+        </h3>
+        <p>
+            点击按钮实现相应功能
+        </p>
+        <p>
+            $(selector)选中的元素的个数为n个，则callback函数会执行n次；
+        </p>
+        <button id="btn1">
+            隐藏
+        </button>
+        <button id="btn2">
+            显示
+        </button>
+         <button id="btn3">
+            通用
+        </button>
+    </body>
+</html>
