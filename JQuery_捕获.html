@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>JQuery捕获</title>
+	<meta charset="utf-8">
+	<script src="http://cdn.static.runoob.com/libs/jquery/1.10.2/jquery.min.js"></script>
+	<script type="text/javascript">
+		//jQuery 中非常重要的部分，就是操作 DOM 的能力。
+    	//jQuery 提供一系列与 DOM 相关的方法，这使访问和操作元素和属性变得很容易。
+    	$(document).ready(function(){
+    		$("#btn1").click(function(){
+    			alert("TEXT:"+$("#text").text());
+    		});
+    		$("#btn2").click(function(){
+    			alert("HTML:"+$("#text").html());
+    		});
+
+    		//如何通过 jQuery val() 方法获得输入字段的值：
+    		$("#btn3").click(function(){
+    			
+    			if($("#testVal").val().trim()!=""){
+    				alert("输入值为:"+$("#testVal").val());
+    				
+    			}else{
+    				alert("不能输入空值.");
+    			}
+    		});
+    		//获取属性值
+    		$("#btn4").click(function(){
+    			alert("attr获取属性:"+$("a").attr("href"));
+    		})
+    	});
+	</script>
+	
+
+</head>
+<body>
+	<p id="text">这是段落中的<b>粗体</b>内容</p>
+	<button id="btn1">显示text</button>
+	<button id="btn2">显示html</button><br/>
+	<hr>
+	输入:<input type="text" id="testVal"/>
+	<button id="btn3">显示输入值</button><br/>
+	<hr>
+	<a href="http://www.baidu.com">去百度</a>
+	<button id="btn4">获取href属性值</button>
+</body>
+</html>

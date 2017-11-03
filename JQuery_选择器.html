@@ -1,9 +1,9 @@
 <!DOCTYPE html>
 <html>
     <head>
-    <!-- 关于 : 和 [] 这两个符号的理解
-	：可以理解为种类的意思，如：p:first，p 的种类为第一个。
-	[] 很自然的可以理解为属性的意思，如：[href] 选取带有 href 属性的元素。
+        <!-- 关于 : 和 [] 这两个符号的理解
+    ：可以理解为种类的意思，如：p:first，p 的种类为第一个。
+    [] 很自然的可以理解为属性的意思，如：[href] 选取带有 href 属性的元素。
 -->
         <title>
             jquery选择器
@@ -12,15 +12,17 @@
         </script>
         <script>
             $(document).ready(function(){
-		$("p").click(function(){
-			$(this).hide();
-		});
-		$("button.b2").click(function(){
-			$("#t1").hide();
-		});
-		$("tr:odd").css("background-color","yellow");
-		$(".left").css("float","left");
-	});
+                $("p").click(function(){
+                 $(this).hide(1000,function(){
+                    alert("callback回调函数，动画结束后才执行");
+                 });
+                });
+                $("button.b2").click(function(){
+                     $("#t1").hide();
+                 });
+                 $("tr:odd").css("background-color","yellow");
+                 $(".left").css("float","left");
+            });
         </script>
     </head>
     <body>
